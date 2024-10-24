@@ -1,15 +1,15 @@
 name = "TuringUtilities"
 uuid = "35dc62cd-6c01-44e1-a736-6cc36bfce0cc"
 authors = ["itsdfish"]
-version = "0.1.0"
+version = "0.1.1"
 
 [deps]
 DynamicPPL = "366bfd00-2699-11ea-058f-f148b4cae6d8"
 Turing = "fce5fe82-541a-59a6-adf8-730c64b5f9a0"
 
 [compat]
-DynamicPPL = "0.28.5"
-Turing = "0.34.1"
+DynamicPPL = "0.28.5, 0.29.0"
+Turing = "0.34.1, 0.35.0"
 julia = "1.6.7"
 
 [extras]
