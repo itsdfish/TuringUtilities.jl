@@ -1,6 +1,6 @@
 module TuringUtilities
 
-using Turing 
+using Turing
 using Turing: @model
 using Turing: @submodel
 
@@ -29,7 +29,7 @@ Generates a predictive distribution for a statistic defined by `func`.
     model,
     func = (x, args...; kwargs...) -> x,
     n_samples,
-    kwargs...
+    kwargs...,
 )
     @submodel parms = model
     sim_data = rand(dist(; parms...), n_samples)
