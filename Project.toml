@@ -1,14 +1,14 @@
 name = "TuringUtilities"
 uuid = "35dc62cd-6c01-44e1-a736-6cc36bfce0cc"
 authors = ["itsdfish"]
-version = "0.1.5"
+version = "0.1.6"
 
 [deps]
 DynamicPPL = "366bfd00-2699-11ea-058f-f148b4cae6d8"
 Turing = "fce5fe82-541a-59a6-adf8-730c64b5f9a0"
 
 [compat]
-DynamicPPL = "0.28.5, 0.29.0, 0.30.0, 0.31.0, 0.32.0"
+DynamicPPL = "0.30.0, 0.31.0, 0.32.0, 0.33.0, 0.34.0"
 SafeTestsets = "0.1.0"
 SequentialSamplingModels = "0.11.13"
 Turing = "0.34.1, 0.35.0, 0.36.0"
