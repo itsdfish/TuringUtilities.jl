@@ -14,5 +14,5 @@ using SafeTestsets
 
     post_chain = sample(model, NUTS(1000, 0.85), 1000)
     pred_model = TuringUtilities.predict_distribution(Wald; model, func = mean, n_samples)
-    post_preds = generated_quantities(pred_model, post_chain)
+    post_preds = returned(pred_model, post_chain)
 end

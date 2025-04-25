@@ -5,3 +5,10 @@
     rts ~ Wald(ν, α, τ)
     return (; ν, α, τ)
 end
+
+@model function normal_model(y)
+    μ ~ Normal(0, 5)
+    σ ~ Gamma(1, 1)
+    y ~ Normal(μ, σ)
+    return (μ, σ)
+end
