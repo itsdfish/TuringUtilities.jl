@@ -1,14 +1,34 @@
-@model function wald_model(rts)
-    ν ~ truncated(Normal(1.5, 1), 0, Inf)
-    α ~ truncated(Normal(0.8, 1), 0, Inf)
-    τ = 0.3
-    rts ~ Wald(ν, α, τ)
-    return (; ν, α, τ)
-end
+using Distributions 
+using Distributions: ContinuousUnivariateDistribution
+import Distributions: logpdf
+import Distributions: rand
+import Distributions: loglikelihood 
+
 
 @model function normal_model(y)
     μ ~ Normal(0, 5)
     σ ~ Gamma(1, 1)
-    y ~ Normal(μ, σ)
-    return (μ, σ)
+    y ~ MyDist(μ, σ)
+    return (; μ, σ)
 end
+
+struct MyDist{T} <: ContinuousUnivariateDistribution
+    μ::T
+    σ::T 
+end
+
+MyDist(; μ, σ) = MyDist(μ, σ)
+
+function logpdf(dist::MyDist, y::Float64)
+    (;μ, σ) = dist 
+    return logpdf(Normal(μ, σ), y)
+end 
+
+function rand(dist::MyDist, n::Int)
+    (;μ, σ) = dist 
+    return rand(Normal(μ, σ), n)
+end 
+
+loglikelihood(dist::MyDist, y::Vector) = sum(logpdf.(dist, y))
+
+Broadcast.broadcastable(x::MyDist) = Ref(x)
