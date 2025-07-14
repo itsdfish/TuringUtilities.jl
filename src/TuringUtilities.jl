@@ -23,15 +23,14 @@ Generates a predictive distribution for a statistic defined by `func`.
 - `kwargs...`: optional keyword arguments passed to `func`
 """
 @model function predict_distribution(
-    dist,
     args...;
+    simulator,
     model,
     func = (x, args...; kwargs...) -> x,
-    n_samples,
     kwargs...
 )
     parms ~ to_submodel(model, false)
-    sim_data = rand(dist(; parms...), n_samples)
+    sim_data = simulator(parms)
     return func(sim_data, args...; kwargs...)
 end
 

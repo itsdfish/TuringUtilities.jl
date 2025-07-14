@@ -12,6 +12,10 @@ using SafeTestsets
     model = normal_model(y)
 
     post_chain = sample(model, NUTS(1000, 0.85), 1000)
-    pred_model = TuringUtilities.predict_distribution(MyDist; model, func = mean, n_samples)
+    pred_model = predict_distribution(;
+        simulator = p -> rand(MyDist(; p...), n_samples),
+        model,
+        func = mean
+    )
     post_preds = returned(pred_model, post_chain)
 end
