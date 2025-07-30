@@ -1,7 +1,7 @@
 name = "TuringUtilities"
 uuid = "35dc62cd-6c01-44e1-a736-6cc36bfce0cc"
 authors = ["itsdfish"]
-version = "0.2.0"
+version = "0.2.1"
 
 [deps]
 Distributions = "31c24e10-a181-5473-b8eb-7969acd0382f"
@@ -10,9 +10,9 @@ Turing = "fce5fe82-541a-59a6-adf8-730c64b5f9a0"
 
 [compat]
 Distributions = "0.25.120"
-DynamicPPL = "0.30.0, 0.31.0, 0.32.0, 0.33.0, 0.34.0, 0.35.0, 0.36.0"
+DynamicPPL = "0.35.0, 0.36.0"
 SafeTestsets = "0.1.0"
-Turing = "0.34.1, 0.35.0, 0.36.0, 0.37.0, 0.38.0, 0.39.0"
+Turing = "0.37.0, 0.38.0, 0.39.0"
 julia = "1.6.7"
 
 [extras]

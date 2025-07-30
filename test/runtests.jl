@@ -18,4 +18,5 @@ using SafeTestsets
         func = mean
     )
     post_preds = returned(pred_model, post_chain)
+    @test isa(post_preds, Matrix{Float64})
 end
