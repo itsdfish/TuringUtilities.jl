@@ -1,6 +1,6 @@
 name = "TuringUtilities"
 uuid = "35dc62cd-6c01-44e1-a736-6cc36bfce0cc"
-version = "0.2.9"
+version = "0.2.10"
 authors = ["itsdfish"]
 
 [deps]
@@ -11,10 +11,10 @@ Turing = "fce5fe82-541a-59a6-adf8-730c64b5f9a0"
 
 [compat]
 Distributions = "0.25.120"
-DynamicPPL = "0.37.0, 0.38.0, 0.39.0, 0.40.0, 0.41.0, 0.42.0"
+DynamicPPL = "0.37.0, 0.38.0, 0.39.0, 0.40.0, 0.41.0, 0.42.0, 0.43.0"
 FlexiChains = "0.6.2"
 SafeTestsets = "0.1.0"
-Turing = "0.40.0, 0.41.0, 0.42.0, 0.43.0, 0.44.0, 0.45.0, 0.46.0"
+Turing = "0.40.0, 0.41.0, 0.42.0, 0.43.0, 0.44.0, 0.45.0, 0.46.0, 0.47.0"
 julia = "1.6.7"
 
 [extras]
